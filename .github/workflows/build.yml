@@ -23,7 +23,7 @@ on:
 permissions: 
   contents: read
   packages: write
-  
+jobs: 
   build-worker:
     runs-on: ubuntu-latest
     steps:
