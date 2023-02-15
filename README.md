@@ -1,5 +1,6 @@
-Multiple rotating Tor proxy
+Multiple rotating Tor proxy ( forked from https://github.com/HarryR/torgw.git )
 ===========================
+
 
 __Goal__ : Use lots of different Tor proxies for multi-threaded requests and concurrency...
 
