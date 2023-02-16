@@ -84,6 +84,8 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/globalsecurityagency/torgw
+          cache-from: type=registry,src=ghcr.io/y0l0-os/torgw-buildcache
+          cache-to: type=registry,dest=ghcr.io/y0l0-os/torgw-buildcache
 #          tags: ${{ steps.meta_worker.outputs.tags }}
           labels: ${{ steps.meta_worker.outputs.labels }}
 #      - name: Docker Hub Description
