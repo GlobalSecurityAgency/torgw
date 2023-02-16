@@ -2,7 +2,7 @@
 rm -rf services
 [[ -z "$TORINSTANCECOUNT" ]] && TORINSTANCECOUNT=8
 
-for N in $seq 1 $TORINSTANCECOUNT)
+for N in $(seq 1 $TORINSTANCECOUNT)
 do
 	mkdir -p /services/tor$N
 	SVFILE=/services/tor$N/run
