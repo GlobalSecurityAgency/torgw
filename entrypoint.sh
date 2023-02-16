@@ -1,5 +1,8 @@
 #!/bin/sh
 
+phrase=$RANDOM"_asd_"$RANDOM"_wsx_"$RANDOM
+pswhash=$(tor  --hash-password  "$phrase"|grep -v "You are running Tor as ro")
+echo "$pswhash"> /tmp/.pswhash
 [[ "$USE_AVAHI" = "true" ]] && ( 
     while (true);do
         dbus-daemon --nofork --config-file=/usr/share/dbus-1/system.conf  2>&1 |sed 's/^/  DBUS:/g' & sleep 10
