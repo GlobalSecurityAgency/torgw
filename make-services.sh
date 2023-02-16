@@ -11,7 +11,7 @@ sed 's/^Log.\+//g' /etc/tor/torrc -i
 
 for N in $(seq 1 $TORINSTANCECOUNT)
 do
-    userno=$n
+    userno=$N
 	mkdir -p /services/tor$N
 	SVFILE=/services/tor$N/run
 	(echo '#!/bin/sh'
