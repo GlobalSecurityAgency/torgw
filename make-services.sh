@@ -9,10 +9,10 @@ do
 	(echo '#!/bin/sh'  
 	echo "mkdir -p /tmp/.var_lib_tor/$N" 
 	echo "chmod a+rw /tmp/.var_lib_tor/$N"
+	echo "chmod a+rx /tmp/.var_lib_tor"
 	echo "exec tor --SocksPort 905$N --PidFile /var/run/tor.$N.pid --CookieAuthentication 1 --Sandbox 1 --DataDirectory /tmp/.var_lib_tor/$N" ) > $SVFILE
 	
 	
-	chmod a+rx /tmp/.var_lib_tor
 
 	chmod 755 $SVFILE
 done
