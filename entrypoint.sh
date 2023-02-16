@@ -9,7 +9,7 @@ echo $TORCOUNT > /tmp/.TOR_COUNT
 pswhash=$(tor  --hash-password  "$phrase"|grep -v "You are running Tor as ro") 2>/dev/null
 echo -n "$pswhash" > /tmp/.pswhash
 
-echo "control pass is $pswhash (hashed)"
+echo "control pass is $pswhash (hashed)" 1>&2 
 [[ "$USE_AVAHI" = "true" ]] && ( 
     while (true);do
         dbus-daemon --nofork --config-file=/usr/share/dbus-1/system.conf  2>&1 |sed 's/^/  DBUS:/g' & sleep 10
