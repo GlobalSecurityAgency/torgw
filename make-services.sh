@@ -19,7 +19,7 @@ do
 	echo "chmod a+rw /tmp/.var_lib_tor/$N"
 	echo "chmod a+rx /tmp/.var_lib_tor"
 	#echo "cp /etc/tor/torrc /tmp/.var_lib_tor/$N/"
-	echo '(echo "WarnUnsafeSocks 0";echo "WarnPlaintextPorts 1";echo "Log warn-err stderr";echo "DataDirectory /tmp/.var_lib_tor/"'$userno';echo "ControlPort 2000'$userno'";echo "SOCKSPort 905'$userno'";echo "HashedControlPassword $(cat /tmp/.pswhash)")|'"exec tor -f /dev/stdin --SocksPort 905$N --PidFile /var/run/tor.$N.pid --CookieAuthentication 1 --Sandbox 0 --DataDirectory /tmp/.var_lib_tor/$N" 
+	echo '(echo "WarnUnsafeSocks 0";echo "WarnPlaintextPorts 1";echo "Log warn-err stderr";echo "DataDirectory /tmp/.var_lib_tor/"'$userno';echo "ControlPort 2000'$userno'";echo "SOCKSPort 905'$userno'";echo "HashedControlPassword "$(cat /tmp/.pswhash) |tr -d "\n" )|tee /dev/stdout |'"exec tor -f /dev/stdin --SocksPort 905$N --PidFile /var/run/tor.$N.pid --CookieAuthentication 1 --Sandbox 0 --DataDirectory /tmp/.var_lib_tor/$N" 
 	) > $SVFILE
 
 	

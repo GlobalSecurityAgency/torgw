@@ -8,6 +8,7 @@ echo $TORCOUNT > /tmp/.TOR_COUNT
 
 pswhash=$(tor  --hash-password  "$phrase"|grep -v "You are running Tor as ro") 2>/dev/null
 echo -n "$pswhash" > /tmp/.pswhash
+
 echo "control pass is $pswhash (hashed)"
 [[ "$USE_AVAHI" = "true" ]] && ( 
     while (true);do
