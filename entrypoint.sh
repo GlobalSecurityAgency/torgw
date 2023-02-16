@@ -14,5 +14,6 @@
 
 env > /etc/envvars
 echo "Running Runit"
-exec /sbin/runsvdir -P /etc/sv
+#exec /sbin/runsvdir -P /etc/sv
+exec /sbin/runsvdir -P /services
 echo "Failed!"
