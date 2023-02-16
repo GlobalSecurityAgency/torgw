@@ -22,3 +22,8 @@ SVFILE=/services/haproxy/run
 echo '#!/bin/sh' > $SVFILE
 echo 'exec haproxy -f /etc/haproxy/haproxy.cfg' >> $SVFILE 
 chmod 755 $SVFILE
+
+(
+    echo "WarnUnsafeSocks 0"
+    echo "WarnPlaintextPorts 1"
+    echo "Log warn-err stderr" )>> /etc/tor/torrc

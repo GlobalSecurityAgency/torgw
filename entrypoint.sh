@@ -1,4 +1,5 @@
 #!/bin/sh
+
 [[ "$USE_AVAHI" = "true" ]] && ( 
     while (true);do
         dbus-daemon --nofork --config-file=/usr/share/dbus-1/system.conf  2>&1 |sed 's/^/  DBUS:/g' & sleep 10
